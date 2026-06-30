@@ -1,260 +1,50 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Smart Mosque Display</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-
-background:#0d5c2f;
-color:white;
-
-overflow:hidden;
-
-}
-
-#container{
-
-width:100vw;
-height:100vh;
-
-display:flex;
-flex-direction:column;
-
-}
-
-header{
-
-height:90px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:20px 40px;
-
-background:#0a4d28;
-
-}
-
-.logo{
-
-font-size:34px;
-font-weight:bold;
-
-}
-
-.clock{
-
-font-size:58px;
-font-weight:bold;
-
-}
-
-.date{
-
-text-align:right;
-
-font-size:22px;
-
-}
-
-main{
-
-flex:1;
-
-display:grid;
-
-grid-template-columns:2fr 1fr;
-
-gap:20px;
-
-padding:20px;
-
-}
-
-.card{
-
-background:white;
-
-color:#222;
-
-border-radius:20px;
-
-padding:20px;
-
-}
-
-.card h2{
-
-margin-bottom:20px;
-
-font-size:32px;
-
-}
-
-table{
-
-width:100%;
-
-font-size:30px;
-
-}
-
-td{
-
-padding:12px;
-
-}
-
-#donasi{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-height:100%;
-
-font-size:40px;
-
-font-weight:bold;
-
-}
-
-footer{
-
-height:60px;
-
-background:#111;
-
-display:flex;
-
-align-items:center;
-
-overflow:hidden;
-
-}
-
-marquee{
-
-font-size:26px;
-
-color:#00ff7f;
-
-font-weight:bold;
-
-}
-
-.night{
-
-background:black !important;
-
-}
-
-.night header{
-
-background:black !important;
-
-}
-
-.night .card{
-
-display:none;
-
-}
-
-.night footer{
-
-display:none;
-
-}
-
-.night .clock{
-
-font-size:150px;
-
-text-align:center;
-
-width:100%;
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="container">
+<div class="header">
 
-<header>
+<h1>🕌 Masjid Jami' Zumrotul Huda</h1>
 
-<div>
+<div id="clock"></div>
 
-<div class="logo">
-
-🕌 Masjid Jami' Zumrotul Huda
+<div id="date"></div>
 
 </div>
 
-<div>
+<div class="content">
 
-Pondok Cabe Ilir, Pamulang • Tangerang Selatan
+<div class="jadwal">
 
-</div>
-
-</div>
-
-<div>
-
-<div class="clock" id="clock"></div>
-
-<div class="date" id="date"></div>
-
-</div>
-
-</header>
-
-<main>
-
-<div class="card">
-
-<h2>🕌 Jadwal Sholat</h2>
+<h2>Jadwal Sholat</h2>
 
 <table>
 
-<tr><td>Subuh</td><td id="subuh">04:36</td></tr>
+<tr><td>Subuh</td><td>04:36</td></tr>
 
-<tr><td>Dzuhur</td><td id="dzuhur">11:58</td></tr>
+<tr><td>Dzuhur</td><td>11:58</td></tr>
 
-<tr><td>Ashar</td><td id="ashar">15:20</td></tr>
+<tr><td>Ashar</td><td>15:20</td></tr>
 
-<tr><td>Maghrib</td><td id="maghrib">17:49</td></tr>
+<tr><td>Maghrib</td><td>17:49</td></tr>
 
-<tr><td>Isya</td><td id="isya">19:02</td></tr>
+<tr><td>Isya</td><td>19:02</td></tr>
 
 </table>
 
 </div>
 
-<div class="card">
-
-<div id="donasi">
+<div class="donasi">
 
 QR DONASI
 
@@ -262,65 +52,17 @@ QR DONASI
 
 </div>
 
-</main>
-
-<footer>
+<div class="running">
 
 <marquee>
 
-🕌 Selamat Datang di Masjid Jami' Zumrotul Huda • Mohon Menonaktifkan Nada Dering HP • Mari Perbanyak Infaq dan Sedekah • Semoga Allah Memberkahi Kita Semua
+Selamat Datang di Masjid Jami' Zumrotul Huda • Mohon Menonaktifkan Nada Dering HP • Mari Perbanyak Infaq
 
 </marquee>
 
-</footer>
-
 </div>
 
-<script>
-
-function updateClock(){
-
-const now=new Date();
-
-document.getElementById("clock").innerHTML=
-
-now.toLocaleTimeString('id-ID');
-
-document.getElementById("date").innerHTML=
-
-now.toLocaleDateString('id-ID',
-
-{
-
-weekday:'long',
-
-day:'numeric',
-
-month:'long',
-
-year:'numeric'
-
-});
-
-let h=now.getHours();
-
-if(h>=22 || h<4){
-
-document.body.classList.add("night");
-
-}else{
-
-document.body.classList.remove("night");
-
-}
-
-}
-
-setInterval(updateClock,1000);
-
-updateClock();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 
