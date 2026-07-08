@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Mosque Display v2.0</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-left">
+
+            <div class="logo-box">
+                <img src="assets/images/logo.png" alt="Logo">
+            </div>
+
+            <div class="masjid-info">
+                <h1>Masjid Jami' Zumrotul Huda</h1>
+                <p>Pondok Cabe Ilir • Pamulang • Tangerang Selatan</p>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <div class="online-status">
+                <img src="assets/images/wifi.png" alt="">
+                <span>ONLINE</span>
+            </div>
+
+            <div class="header-divider"></div>
+
+            <div class="header-date">
+                <div id="tanggalMasehi">Rabu, 01 Juli 2026</div>
+                <div id="tanggalHijriah">15 Muharram 1448 H</div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="prayer-card">
+
+            <div class="card-title">
+                JADWAL SHOLAT
+            </div>
+
+            <div class="prayer-list">
+
+                <div class="prayer-item">
+                    <span>Imsak</span>
+                    <strong>04:21</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Subuh</span>
+                    <strong>04:31</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Syuruq</span>
+                    <strong>05:50</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Dzuhur</span>
+                    <strong>11:57</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Ashar</span>
+                    <strong>15:15</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Maghrib</span>
+                    <strong>17:56</strong>
+                </div>
+
+                <div class="prayer-item">
+                    <span>Isya</span>
+                    <strong>19:10</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="content">
+
+    <section class="clock-card">
+
+        <div class="clock-title">
+            <span></span>
+            <h2>WAKTU SAAT INI</h2>
+            <span></span>
+        </div>
+
+        <div id="clock" class="digital-clock">
+            00:00:00
+        </div>
+
+        <div class="date-boxes">
+
+            <div class="date-box">
+                <div class="date-icon"></div>
+                <div>
+                    <small>Masehi</small>
+                    <h4 id="tanggalBox">
+                        Kamis, 02 Juli 2026
+                    </h4>
+                </div>
+            </div>
+
+            <div class="date-box">
+                <div class="date-icon"></div>
+                <div>
+                    <small>Hijriah</small>
+                    <h4 id="hijriahBox">
+                        17 Muharram 1448 H
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="countdown-card">
+
+    <div class="count-title">
+        MENUJU
+    </div>
+
+    <div id="nextPrayer" class="next-prayer">
+        DZUHUR
+    </div>
+
+    <div id="countdown" class="count-time">
+        00:00:00
+    </div>
+
+</section>
+
+    <section class="ayat-card">
+
+        <h3>Ayat Al-Qur'an</h3>
+
+        <p id="ayat">
+            "Sesungguhnya shalat itu adalah kewajiban yang telah ditentukan waktunya atas orang-orang yang beriman."
+        </p>
+
+        <span>QS. An-Nisa : 103</span>
+
+    </section>
+
+</main>
+
+    <!-- ================= RIGHT ================= -->
+
+    <!-- ================= RIGHT BAR ================= -->
+
+<aside class="rightbar">
+
+    <!-- INFO MASJID -->
+
+    <section class="info-card">
+
+        <div class="card-title">
+            INFO MASJID
+        </div>
+
+        <div class="info-body">
+
+            <div class="info-item">
+                <strong>Kajian Ahad</strong>
+                <p>Ba'da Subuh bersama Ustadz ...</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Santunan Yatim</strong>
+                <p>Ahad, 10 Muharram 1448 H</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Kerja Bakti</strong>
+                <p>Setiap Minggu Pukul 07.00 WIB</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QRIS DONASI -->
+
+    <section class="donation-card">
+
+        <div class="card-title">
+            DONASI MASJID
+        </div>
+
+        <div class="donation-body">
+
+            <img src="assets/images/qris.png" alt="QRIS">
+
+            <p>Scan QRIS untuk Infaq Masjid</p>
+
+        </div>
+
+    </section>
+
+</aside>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        Smart Mosque Display v2.0
+
+    </footer>
+
+</div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
