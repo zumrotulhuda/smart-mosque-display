@@ -1,33 +1,18 @@
 /*=====================================================
- SMART MOSQUE DISPLAY V2.0
- Base Layout
+ SMART MOSQUE DISPLAY v2.1
+ FINAL CSS
 ======================================================*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto+Mono:wght@700&display=swap');
+
+/*=====================================================
+RESET
+======================================================*/
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-:root{
-
-    --green:#12945C;
-    --green-dark:#0B7A4A;
-
-    --white:#ffffff;
-
-    --bg:#EEF5F1;
-
-    --text:#202020;
-
-    --radius:22px;
-
-    --shadow:0 8px 20px rgba(0,0,0,.08);
-
-    --gap:16px;
-
 }
 
 html,
@@ -40,7 +25,34 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:var(--bg);
+    background:#EEF5F1;
+
+    color:#202020;
+
+}
+
+/*=====================================================
+VARIABLE
+======================================================*/
+
+:root{
+
+    --green:#12945C;
+    --green-dark:#0B7A4A;
+
+    --white:#ffffff;
+
+    --bg:#EEF5F1;
+
+    --text:#202020;
+
+    --radius:24px;
+
+    --gap:16px;
+
+    --shadow:
+        0 8px 20px
+        rgba(0,0,0,.08);
 
 }
 
@@ -50,33 +62,87 @@ DASHBOARD
 
 .dashboard{
 
-    width:100%;
+    width:100vw;
+
     height:100vh;
+
+    padding:16px;
 
     display:grid;
 
-    grid-template-columns:360px 1fr 360px;
+    grid-template-columns:
 
-    grid-template-rows:88px minmax(0,1fr) 48px;
+        360px
+
+        minmax(0,1fr)
+
+        360px;
+
+    grid-template-rows:
+
+        88px
+
+        minmax(0,1fr)
+
+        48px;
 
     grid-template-areas:
+
         "header header header"
+
         "sidebar content rightbar"
+
         "footer footer footer";
 
     gap:16px;
 
-    padding:16px;
-
 }
 
 /*=====================================================
- Header
+GRID AREA
 ======================================================*/
 
 .header{
 
-    grid-column:1/-1;
+    grid-area:header;
+
+}
+
+.sidebar{
+
+    grid-area:sidebar;
+
+    min-height:0;
+
+}
+
+.content{
+
+    grid-area:content;
+
+    min-height:0;
+
+}
+
+.rightbar{
+
+    grid-area:rightbar;
+
+    min-height:0;
+
+}
+
+.footer{
+
+    grid-area:footer;
+
+}
+
+/*=====================================================
+HEADER
+======================================================*/
+
+.header{
 
     display:flex;
 
@@ -91,17 +157,22 @@ DASHBOARD
     background:
 
     linear-gradient(
+
         90deg,
-        #18A35F,
-        #0F8D53,
-        #0A7847
+
+        #17A160,
+
+        #12945C,
+
+        #0B7A4A
+
     );
 
     box-shadow:var(--shadow);
 
 }
 
-/* LEFT */
+/* kiri */
 
 .header-left{
 
@@ -159,11 +230,11 @@ DASHBOARD
 
     font-size:1rem;
 
-    margin-top:2px;
+    margin-top:8px;
 
 }
 
-/* RIGHT */
+/* kanan */
 
 .header-right{
 
@@ -171,21 +242,13 @@ DASHBOARD
 
     align-items:center;
 
-    gap:26px;
+    gap:24px;
 
 }
 
 .online-status{
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    width:230px;
+    width:220px;
 
     height:50px;
 
@@ -193,7 +256,15 @@ DASHBOARD
 
     background:#fff;
 
-    color:var(--green);
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#12945C;
 
     font-weight:700;
 
@@ -201,7 +272,7 @@ DASHBOARD
 
 .online-status img{
 
-    width:26px;
+    width:24px;
 
 }
 
@@ -209,15 +280,21 @@ DASHBOARD
 
     width:2px;
 
-    height:72px;
+    height:70px;
 
-    background:rgba(255,255,255,.45);
+    background:
+
+    rgba(255,255,255,.35);
 
 }
 
 .header-date{
 
-    text-align:left;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
 
 }
 
@@ -225,11 +302,9 @@ DASHBOARD
 
     color:#fff;
 
-    font-size:1.15rem;
+    font-size:1.1rem;
 
     font-weight:700;
-
-    margin-bottom:8px;
 
 }
 
@@ -237,54 +312,31 @@ DASHBOARD
 
     color:#DDF8E8;
 
-    font-size:1rem;
+    font-size:.95rem;
 
 }
 
 /*=====================================================
-GRID AREA
-======================================================*/
-
-.header{
-    grid-area:header;
-}
-
-.sidebar{
-    grid-area:sidebar;
-    min-height:0;
-}
-
-.content{
-    grid-area:content;
-    min-height:0;
-}
-
-.rightbar{
-    grid-area:rightbar;
-    min-height:0;
-}
-
-.footer{
-    grid-area:footer;
-    background:#0F8D53;
-    border-radius:18px;
-}
-
-/*=========================================
 SIDEBAR
-==========================================*/
+======================================================*/
 
 .sidebar{
 
     height:100%;
 
+    min-height:0;
+
+    overflow:hidden;
+
 }
 
-/*=========================================
+/*=====================================================
 PRAYER CARD
-==========================================*/
+======================================================*/
 
 .prayer-card{
+
+    width:100%;
 
     height:100%;
 
@@ -297,8 +349,10 @@ PRAYER CARD
     display:grid;
 
     grid-template-rows:
+
         60px
-        1fr;
+
+        minmax(0,1fr);
 
     overflow:hidden;
 
@@ -310,27 +364,33 @@ PRAYER CARD
 
     color:#fff;
 
-    font-size:1.6rem;
-
-    font-weight:700;
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
+    font-size:1.45rem;
+
+    font-weight:700;
+
 }
+
+/*=====================================================
+PRAYER LIST
+======================================================*/
 
 .prayer-list{
 
     display:grid;
 
-    grid-template-rows:repeat(7,1fr);
+    grid-template-rows:repeat(7,minmax(0,1fr));
 
-    gap:6px;
+    gap:8px;
 
-    padding:10px 16px;
+    padding:12px;
+
+    min-height:0;
 
 }
 
@@ -342,24 +402,34 @@ PRAYER CARD
 
     align-items:center;
 
-    padding:0 14px;
+    padding:0 16px;
 
     border-radius:14px;
 
-    border-bottom:1px solid #ECECEC;
+    background:#F9FAF9;
 
-    font-size:1.15rem;
+    border:1px solid #ECECEC;
 
-    font-weight:500;
+    font-size:1.1rem;
+
+    transition:.3s;
 
 }
 
-.prayer-item:last-child{
-    border-bottom:none;
+.prayer-item span{
+
+    font-weight:600;
+
 }
 
 .prayer-item strong{
+
+    font-family:'Roboto Mono',monospace;
+
+    font-size:1.1rem;
+
     font-weight:700;
+
 }
 
 .prayer-item.active{
@@ -368,30 +438,37 @@ PRAYER CARD
 
     color:#fff;
 
-    border:none;
+    border-color:#12945C;
 
 }
 
-/*=========================================
+/*=====================================================
 CONTENT
-==========================================*/
+======================================================*/
 
 .content{
-
-    display:grid;
-
-    grid-template-rows:
-        42fr
-        26fr
-        32fr;
-
-    gap:16px;
 
     height:100%;
 
     min-height:0;
 
+    display:grid;
+
+    grid-template-rows:
+
+        45fr
+
+        20fr
+
+        35fr;
+
+    gap:16px;
+
 }
+
+/*=====================================================
+CARD UMUM
+======================================================*/
 
 .clock-card,
 .countdown-card,
@@ -400,70 +477,70 @@ CONTENT
 .donation-card{
 
     width:100%;
+
     height:100%;
 
     background:#fff;
+
     border-radius:24px;
-    padding:18px;
+
     box-shadow:var(--shadow);
 
     overflow:hidden;
 
     box-sizing:border-box;
-}
-
-/*=========================================
-RIGHT BAR
-==========================================*/
-
-.rightbar{
-
-    display:grid;
-
-    grid-template-rows:
-        60%
-        36%;
-
-    gap:16px;
-
-    height:100%;
-
-    min-height:0;
 
 }
 
-.info-card,
-.donation-card{
+/*=====================================================
+CLOCK CARD
+======================================================*/
 
-    min-height:0;
-
-}
-
-.info-card,
-.donation-card{
-
-    background:#fff;
-
-    border-radius:24px;
-
-    box-shadow:var(--shadow);
-
-    overflow:hidden;
+.clock-card{
 
     display:flex;
 
     flex-direction:column;
 
+    padding:20px;
+
 }
 
-.info-card .card-title,
-.donation-card .card-title{
+.clock-title{
 
-    height:60px;
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.clock-title span{
+
+    flex:1;
+
+    height:3px;
 
     background:#12945C;
 
-    color:#fff;
+    border-radius:999px;
+
+}
+
+.clock-title h2{
+
+    white-space:nowrap;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+}
+
+.digital-clock{
+
+    flex:1;
 
     display:flex;
 
@@ -471,9 +548,203 @@ RIGHT BAR
 
     align-items:center;
 
-    font-size:1.4rem;
+    font-family:'Roboto Mono',monospace;
+
+    font-size:5.2rem;
 
     font-weight:700;
+
+    color:#12945C;
+
+    white-space:nowrap;
+
+}
+
+/*=====================================================
+DATE BOX
+======================================================*/
+
+.date-boxes{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.date-box{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border:1px solid #E8E8E8;
+
+    border-radius:16px;
+
+    padding:14px;
+
+}
+
+.date-box small{
+
+    color:#777;
+
+}
+
+.date-box h4{
+
+    margin-top:4px;
+
+    font-size:1rem;
+
+}
+
+/*=====================================================
+COUNTDOWN CARD
+======================================================*/
+
+.countdown-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.count-title{
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    color:#666;
+
+    margin-bottom:6px;
+
+}
+
+.next-prayer{
+
+    font-size:2.8rem;
+
+    font-weight:800;
+
+    color:#12945C;
+
+    margin:6px 0;
+
+    white-space:nowrap;
+
+}
+
+.count-time{
+
+    font-family:'Roboto Mono',monospace;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:#202020;
+
+    white-space:nowrap;
+
+}
+
+/*=====================================================
+AYAT CARD
+======================================================*/
+
+.ayat-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+.ayat-card h3{
+
+    color:#12945C;
+
+    margin-bottom:14px;
+
+}
+
+.ayat-card p{
+
+    flex:1;
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    color:#444;
+
+    text-align:justify;
+
+}
+
+.ayat-card span{
+
+    margin-top:16px;
+
+    font-weight:700;
+
+    color:#12945C;
+
+}
+
+/*=====================================================
+RIGHT BAR
+======================================================*/
+
+.rightbar{
+
+    display:grid;
+
+    grid-template-rows:
+
+        65%
+
+        33%;
+
+    gap:16px;
+
+    height:100%;
+
+}
+
+/*=====================================================
+INFO CARD
+======================================================*/
+
+.info-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.info-card .card-title{
+
+    flex:0 0 60px;
 
 }
 
@@ -481,33 +752,89 @@ RIGHT BAR
 
     flex:1;
 
-    padding:14px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    overflow:hidden;
+
+}
+
+.info-slider{
+
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+.info-slide{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    animation:fade .6s;
+
+}
+
+.info-slide.active{
+
+    display:flex;
+
+}
+
+.info-slide strong{
+
+    color:#12945C;
+
+    font-size:1.5rem;
+
+    margin-bottom:14px;
+
+}
+
+.info-slide p{
+
+    font-size:1rem;
+
+    line-height:1.6;
+
+    color:#444;
+
+}
+
+/*=====================================================
+DONATION
+======================================================*/
+
+.donation-card{
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:space-evenly;
-
 }
 
-.info-item{
+.donation-card .card-title{
 
-    padding-bottom:10px;
-
-}
-
-.info-item strong{
-
-    font-size:1rem;
-
-}
-
-.info-item p{
-
-    font-size:.9rem;
-
-    line-height:1.35;
+    flex:0 0 60px;
 
 }
 
@@ -517,173 +844,214 @@ RIGHT BAR
 
     display:flex;
 
-    justify-content:center;
+    flex-direction:column;
+
+    justify-content:flex-start;
 
     align-items:center;
 
-    flex-direction:column;
-
-    padding:12px;
+    padding:14px 16px;
 
     text-align:center;
+
+    gap:10px;
+
 }
 
 .donation-body img{
 
-    width:130px;
+    width:190px;
+    height:190px;
+    object-fit:contain;
 
-    margin-bottom:8px;
+    background:#fff;
+    padding:8px;
+    border-radius:12px;
 }
 
 .donation-body p{
 
-    font-size:.95rem;
+    font-size:.9rem;
 
-    line-height:1.3;
-}
+    line-height:1.35;
 
-/*==============================
-JAM
-==============================*/
+    color:#555;
 
-.clock-title{
-    display:flex;
-    align-items:center;
-    gap:1px;
-}
-
-.clock-title span{
-    flex:1;
-    height:3px;
-    background:#17A160;
-    border-radius:10px;
-}
-
-.clock-title h2{
-    font-size:2rem;
-    font-weight:800;
-    color:#202020;
-    white-space:nowrap;
-}
-
-.digital-clock{
-    font-family:'Roboto Mono', monospace;
-    font-size:4rem;
-    font-weight:700;
-    color:#12945C;
-    text-align:center;
-    line-height:1;
-    margin:1px 0;
-}
-
-/*==============================
-TANGGAL
-==============================*/
-
-.date-boxes{
-    display:flex;
-    gap:12px;
-}
-
-.date-box{
-    flex:1;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    border:1px solid #E8E8E8;
-    border-radius:16px;
-    padding:14px;
-}
-
-.date-icon{
-    font-size:2rem;
-}
-
-.date-box small{
-    color:#777;
-    display:block;
-}
-
-.date-box h4{
-    font-size:1rem;
-    margin-top:4px;
-}
-
-/*==============================
-COUNTDOWN
-==============================*/
-
-.countdown-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:0.1px;
-    padding:0px;
-}
-
-.count-title{
-    font-size:0.7rem;
     margin:0;
+
 }
 
-.next-prayer{
-    display:block;
-    font-size:2rem;
-    font-weight:800;
-    color:#12945C;
-    line-height:1;
-    margin:0;
-}
+/*=====================================================
+FOOTER
+======================================================*/
 
-.count-time{
-    font-family:'Roboto Mono', monospace;
-    font-size:2rem;
-    font-weight:700;
-    line-height:0.6;
-    margin:0;
-}
+.footer{
 
-/*==============================
-AYAT
-==============================*/
+    background:#12945C;
 
-.ayat-card{
-
-    background:#fff;
-
-    border-radius:24px;
-
-    padding:18px;
-
-    box-shadow:var(--shadow);
+    border-radius:18px;
 
     overflow:hidden;
 
+    display:flex;
+
+    align-items:center;
+
 }
 
-.ayat-card h3{
-    color:#12945C;
-    margin-bottom:10px;
+.running-text{
+
+    width:100%;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
 }
 
-.ayat-card p{
+.running-content{
+
+    display:inline-block;
+
+    padding-left:100%;
+
+    color:#fff;
+
     font-size:1rem;
-    line-height:1.6;
+
+    font-weight:600;
+
+    animation:runningText 35s linear infinite;
+
 }
 
-.ayat-card span{
-    display:block;
-    margin-top:14px;
+/*=====================================================
+MODE SCREEN
+======================================================*/
+
+.adzan-screen,
+.iqomah-screen,
+.sholat-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#12945C;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.adzan-screen.show,
+.iqomah-screen.show,
+.sholat-screen.show{
+
+    display:flex;
+
+}
+
+.adzan-content,
+.iqomah-content,
+.sholat-content{
+
+    text-align:center;
+
+    color:#fff;
+
+}
+
+.adzan-content h1,
+.iqomah-content h1{
+
+    font-size:5rem;
+
+    margin:20px 0;
+
+}
+
+.adzan-content h2,
+.iqomah-content h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+}
+
+#adzanPrayer,
+#iqomahPrayer{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+.iqomah-timer{
+
+    font-family:'Roboto Mono',monospace;
+
+    font-size:5rem;
+
     font-weight:700;
+
+    margin:25px 0;
+
 }
 
-/*==============================
-GRID
-==============================*/
+.sholat-clock{
 
-.sidebar,
-.content,
-.rightbar{
-    min-height:0;
+    font-family:'Roboto Mono',monospace;
+
+    font-size:9rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+/*=====================================================
+ANIMATION
+======================================================*/
+
+@keyframes runningText{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-100%);
+
+    }
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
 }
